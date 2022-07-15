@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PGM XML Generator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet" integrity="sha384-pRc2KzVNklDsDOJGRD8O1gWVq18w2cZK9D9PDPjHZM9ow3ozM5EhVrqK3dCna9fX" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand"><i class="bi bi-file-code"></i> PGM XML Generator</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/"><i class="bi bi-house-fill"></i> Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://github.com/TheRealPear/pgmgen.github.io" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> GitHub</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="text-white bg-dark p-4 rounded-3 m-3">
+        <h1 class="display-6">PGM XML Generator</h1>
+        <p class="lead">A simple website to assist in formatting XML files for PvP Game Manager (PGM) maps.</p>
+      </div>
+      <hr class="my-4 m-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="h5">XML Modules</p>
+            <hr class="my-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                  The latest map proto is <code>1.4.0</code>.
+                </div>
+            </div>
+            <hr class="my-3">
+            <ul class="nav nav-pills flex-column">    
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Main Map Elements</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Authors & Contributors</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Teams/Players</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Kits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Objectives</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Filters</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Regions</a>
+                </li>
+              </ul>
+          </div>
+          <div class="col">
+            <p class="h5">Map Attributes</p>
+            <hr class="my-3">
+            <div class="form-floating mb-3">
+                <select class="form-select" id="mapProto">
+                    <option value="1">1.4.2</option>
+                    <option value="2">1.4.1</option>
+                    <option value="3" selected>1.4.0 (recommended)</option>
+                    <option value="4">1.3.6</option>
+                    <option value="5">1.3.5</option>
+                    <option value="6">1.3.4</option>
+                    <option value="7">1.3.3</option>
+                    <option value="8">1.3.2</option>
+                    <option value="9">1.3.1</option>
+                  </select>
+                  <label for="mapProto">Protocol Version</label>                
+            </div>        
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="mapName" placeholder="">
+                <label for="mapName">Map Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="mapVersion" placeholder="1.0.0" value="1.0.0">
+                <label for="mapVersion">Map Version</label>
+            </div>
+            <div class="form-floating">
+                <textarea class="form-control" style="height: 80px" placeholder="" id="mapDescription"></textarea>
+                <label for="mapDescription">Map Objective</label>
+            </div>
+            <hr class="my-3">
+            <button type="button" class="btn btn-secondary">Add to Output</button>
+            <button type="button" class="btn btn-secondary">/></button>
+            <div class="float-end">
+                <button type="button" class="btn btn-danger">Clear Input</button>
+              </div>
+          </div>
+          <div class="col-sm-4">
+            <p class="h5">XML Output</p>
+            <hr class="my-3">
+            <textarea class="form-control" id="textAreaExample" rows="8" placeholder="Your XML file will appear here when the required map details are populated." readonly></textarea>
+            <hr class="my-3">
+            <div class="text-center">
+                <button type="button" class="btn btn-primary">Import XML</button>
+                <button type="button" class="btn btn-primary">Export XML</button>
+                <button type="button" class="btn btn-danger">Clear All</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </body>
+</html>
