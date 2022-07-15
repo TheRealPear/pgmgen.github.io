@@ -1,0 +1,4 @@
+/* Fixes tab panes adding unneeded white space despite being invisible and inactive */
+.tab-pane:not(.active) {
+    display: none;
+}

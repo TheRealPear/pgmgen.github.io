@@ -19,6 +19,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet" integrity="sha384-pRc2KzVNklDsDOJGRD8O1gWVq18w2cZK9D9PDPjHZM9ow3ozM5EhVrqK3dCna9fX" crossorigin="anonymous">
   </head>
   <body>
+    <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand"><i class="bi bi-file-code"></i> PGM XML Generator</a>
@@ -28,7 +29,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/"><i class="bi bi-house-fill"></i> Home</a>
+                <a class="nav-link active" aria-current="page" href=""><i class="bi bi-house"></i> Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="https://github.com/TheRealPear/pgmgen.github.io" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> GitHub</a>
@@ -37,13 +38,16 @@
           </div>
         </div>
       </nav>
-      <div class="text-white bg-dark p-4 rounded-3 m-3">
+      <!-- Jumbotron -->
+      <div class="text-white bg-dark bg-gradient p-4 rounded-3 m-3">
         <h1 class="display-6">PGM XML Generator</h1>
         <p class="lead">A simple website to assist in formatting XML files for PvP Game Manager (PGM) maps.</p>
       </div>
       <hr class="my-4 m-4">
+      <!-- Main container divided into 2 small column and 1 large column -->
       <div class="container">
         <div class="row">
+          <!-- Left column -->
           <div class="col-sm-3">
             <p class="h5">XML Modules</p>
             <hr class="my-3">
@@ -53,81 +57,209 @@
                 </div>
             </div>
             <hr class="my-3">
-            <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Main Map Elements</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Authors & Contributors</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Teams/Players</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Kits</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Objectives</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Filters</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Regions</a>
-                </li>
-              </ul>
+            <div class="nav flex-column nav-pills" id="sidebar-tab" role="tablist" aria-orientation="vertical">
+              <button class="nav-link text-start active" id="main-map-tab" data-bs-toggle="pill" data-bs-target="#main-map-elements" type="button" role="tab" aria-controls="main-map-elements" aria-selected="true">Main Map Elements</button>
+              <button class="nav-link text-start" id="authors-contributors-tab" data-bs-toggle="pill" data-bs-target="#authors-contributors" type="button" role="tab" aria-controls="authors-contributors" aria-selected="false">Authors & Contributors</button>
+              <button class="nav-link text-start" id="teams-players-tab" data-bs-toggle="pill" data-bs-target="#teams-players" type="button" role="tab" aria-controls="teams-players" aria-selected="false">Teams/Players</button>
+              <button class="nav-link text-start" id="kits-tab" data-bs-toggle="pill" data-bs-target="#kits" type="button" role="tab" aria-controls="kits" aria-selected="false">Kits</button>
+              <button class="nav-link text-start" id="objectives-tab" data-bs-toggle="pill" data-bs-target="#objectives" type="button" role="tab" aria-controls="objectives" aria-selected="false">Objectives</button>
+              <button class="nav-link text-start" id="filters-tab" data-bs-toggle="pill" data-bs-target="#filters" type="button" role="tab" aria-controls="filters" aria-selected="false">Filters</button>
+              <button class="nav-link text-start" id="regions-tab" data-bs-toggle="pill" data-bs-target="#regions" type="button" role="tab" aria-controls="regions" aria-selected="false">Regions</button>
+            </div>  
           </div>
+          <!-- Center column -->
           <div class="col">
             <p class="h5">Map Attributes</p>
             <hr class="my-3">
-            <div class="form-floating mb-3">
-                <select class="form-select" id="mapProto">
-                    <option value="1">1.4.2</option>
-                    <option value="2">1.4.1</option>
-                    <option value="3" selected>1.4.0 (recommended)</option>
-                    <option value="4">1.3.6</option>
-                    <option value="5">1.3.5</option>
-                    <option value="6">1.3.4</option>
-                    <option value="7">1.3.3</option>
-                    <option value="8">1.3.2</option>
-                    <option value="9">1.3.1</option>
-                  </select>
-                  <label for="mapProto">Protocol Version</label>
-            </div>        
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="mapName" placeholder="">
-                <label for="mapName">Map Name</label>
+            <div class="tab-content" id="sidebar-tabContent">
+              <!-- Main Map Elements content -->
+              <div class="tab-pane fade show active" id="main-map-elements" role="tabpanel" aria-labelledby="main-map-elements" tabindex="0">
+                 <div class="form-floating mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="xmldeclareChecked" checked>
+                    <label class="form-check-label" for="xmldeclareChecked">Include XML declaration tag</label>
+                  </div>
+                 </div>
+                <div class="form-floating mb-3">
+                  <select class="form-select" id="mapProto">
+                      <option value="1">1.4.2</option>
+                      <option value="2">1.4.1</option>
+                      <option value="3" selected>1.4.0 (recommended)</option>
+                      <option value="4">1.3.6</option>
+                      <option value="5">1.3.5</option>
+                      <option value="6">1.3.4</option>
+                      <option value="7">1.3.3</option>
+                      <option value="8">1.3.2</option>
+                      <option value="9">1.3.1</option>
+                    </select>
+                    <label for="mapProto">Protocol Version</label>
+                 </div>        
+                 <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="mapName" placeholder="" required="true">
+                  <label for="mapName">Map Name</label>
+                 </div>
+                 <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="mapVersion" placeholder="1.0.0" value="1.0.0">
+                  <label for="mapVersion">Map Version</label>
+                 </div>
+                 <div class="form-floating">
+                  <textarea class="form-control" style="height: 80px" placeholder="" id="mapDescription"></textarea>
+                  <label for="mapDescription">Map Objective</label>
+                 </div>
+              </div>
+              <!-- Authors & Contributors content -->
+              <div class="tab-pane fade" id="authors-contributors" role="tabpanel" aria-labelledby="authors-contributors-tab" tabindex="0">
+                <p class="h6">Authors</p>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="authorUUID" placeholder="">
+                  <label for="authorUUID">Author's UUID</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="authorNotes" placeholder="">
+                  <label for="authorNotes">Author's Contribution Notes</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="authorUsername" placeholder="">
+                  <label for="authorUsername">Author's Username</label>
+                </div>
+                <div class="text-end">
+                  <div class="btn-group btn-group-sm" role="group" aria-label="Authors control">
+                    <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Author</button>
+                    <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Author</button>
+                  </div>
+                </div>
+                <p class="h6">Contributors</p>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="contributorUUID" placeholder="">
+                  <label for="contributorUUID">Contributor's UUID</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="contributorNotes" placeholder="">
+                  <label for="contributorNotes">Contributor's Contribution Notes</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="contributorUsername" placeholder="">
+                  <label for="contributorUsername">Contributor's Username</label>
+                </div>
+                <div class="text-end">
+                  <div class="btn-group btn-group-sm" role="group" aria-label="Authors control">
+                    <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Contributor</button>
+                    <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Contributor</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Teams/Players content -->
+              <div class="tab-pane fade" id="teams-players" role="tabpanel" aria-labelledby="teams-players-tab" tabindex="0">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="teamID" placeholder="">
+                  <label for="teamID">Team ID</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="teamName" placeholder="">
+                  <label for="teamName">Team Name</label>
+                </div>
+                <div class="col">
+                  <div class="form-floating mb-3 w-50">
+                    <select class="form-select" id="teamColor">
+                      <option value="1">Black</option>
+                      <option value="2">Dark Blue</option>
+                      <option value="3">Dark Green</option>
+                      <option value="4">Dark Aqua</option>
+                      <option value="5">Dark Red</option>
+                      <option value="6">Dark Purple</option>
+                      <option value="7">Gold</option>
+                      <option value="8">Gray</option>
+                      <option value="9">Dark Gray</option>
+                      <option value="10">Blue</option>
+                      <option value="11">Green</option>
+                      <option value="12">Aqua</option>
+                      <option value="13">Red</option>
+                      <option value="14">Light Purple</option>
+                      <option value="15">Yellow</option>
+                      <option value="16">White</option>
+                    </select>
+                    <label for="teamColor">Team Color</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-floating mb-3 w-50">
+                    <select class="form-select" id="teamColor">
+                      <option value="0" selected>-</option>
+                      <option value="1">Black</option>
+                      <option value="2">Dark Blue</option>
+                      <option value="3">Dark Green</option>
+                      <option value="4">Dark Aqua</option>
+                      <option value="5">Dark Red</option>
+                      <option value="6">Dark Purple</option>
+                      <option value="7">Gold</option>
+                      <option value="8">Gray</option>
+                      <option value="9">Dark Gray</option>
+                      <option value="10">Blue</option>
+                      <option value="11">Green</option>
+                      <option value="12">Aqua</option>
+                      <option value="13">Red</option>
+                      <option value="14">Light Purple</option>
+                      <option value="15">Yellow</option>
+                      <option value="16">White</option>
+                    </select>
+                    <label for="teamColor">Team Overhead Color</label>
+                  </div>
+                </div>
+                <div class="text-end">
+                  <div class="btn-group btn-group-sm" role="group" aria-label="Teams control">
+                    <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Team</button>
+                    <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Team</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Kits content -->
+              <div class="tab-pane fade" id="kits" role="tabpanel" aria-labelledby="kits-tab" tabindex="0">KT...</div>
+              <!-- Objectives content -->
+              <div class="tab-pane fade" id="objectives" role="tabpanel" aria-labelledby="objectives-tab" tabindex="0">OB...</div>
+              <!-- Filters content -->
+              <div class="tab-pane fade" id="filters" role="tabpanel" aria-labelledby="filters-tab" tabindex="0">FI...</div>
+              <!-- Regions content -->
+              <div class="tab-pane fade" id="regions" role="tabpanel" aria-labelledby="regions-tab" tabindex="0">RE...</div>
             </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="mapVersion" placeholder="1.0.0" value="1.0.0">
-                <label for="mapVersion">Map Version</label>
-            </div>
-            <div class="form-floating">
-                <textarea class="form-control" style="height: 80px" placeholder="" id="mapDescription"></textarea>
-                <label for="mapDescription">Map Objective</label>
-            </div>
+            <!-- Input Control -->
             <hr class="my-3">
-            <button type="button" class="btn btn-secondary">Add to Output</button>
+            <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> Add to Output</button>
             <button type="button" class="btn btn-secondary">/></button>
             <div class="float-end">
-                <button type="button" class="btn btn-danger">Clear Input</button>
-              </div>
+              <button type="button" class="btn btn-danger">Clear Input</button>
+            </div>
           </div>
+          <!-- Right column -->
           <div class="col-sm-4">
             <p class="h5">XML Output</p>
             <hr class="my-3">
-            <textarea class="form-control" id="textAreaExample" rows="8" placeholder="Your XML file will appear here when the required map details are populated." readonly></textarea>
+            <textarea class="form-control" id="textAreaExample" rows="8" placeholder="Your XML file will appear here once the required map details are populated." readonly></textarea>
             <hr class="my-3">
             <div class="text-center">
-                <button type="button" class="btn btn-primary">Import XML</button>
-                <button type="button" class="btn btn-primary">Export XML</button>
-                <button type="button" class="btn btn-danger">Clear All</button>
+                <label type="button" class="btn btn-primary"><i class="bi bi-upload"></i> Import XML<input type="file" hidden></label>
+                <button type="button" class="btn btn-primary"><i class="bi bi-download"></i> Export XML</button>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#clearallModal"><i class="bi bi-trash3"></i> Clear All</button>
+            </div>
+            <div class="modal fade" tabindex="-1" id="clearallModal">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Confirm Clear All</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Are you sure you want to clear all entries? Any unsaved changes will be lost.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger">Clear All</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
   </body>
 </html>

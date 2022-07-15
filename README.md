@@ -8,15 +8,13 @@ The goal of PGM XML Generator is to simplify the XML creation process of mapmaki
 PGM XML Generator is still in its infancy. As such, new features are actively being worked on and implemented.
 
 #### Supported Gamemodes
-* Destroy the Monument (DTM)
-* Destroy the Core (DTC)
-* King of the Hill (KoTH)
+* TBD
 
 #### Not implemented
 * TBD
 
 ## Usage
-To start using PGM XML Generator, you simply just need a modern web browser and [click here](https://pgmgen.github.io). No download is necessary!
+To start using PGM XML Generator, you simply just need a modern web browser (with JavaScript enabled) and [click here](https://pgmgen.github.io). No download is necessary!
 
 ## Contributing & Licensing
-All contribution are welcomed. This project is made available under the [MIT license](https://github.com/TheRealPear/pgmgen.github.io/blob/main/LICENSE).
+All contribution are welcomed. This project is available under the [MIT license](https://github.com/TheRealPear/pgmgen.github.io/blob/main/LICENSE).
