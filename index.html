@@ -59,12 +59,13 @@
             <hr class="my-3">
             <div class="nav flex-column nav-pills" id="sidebar-tab" role="tablist" aria-orientation="vertical">
               <button class="nav-link text-start active" id="main-map-tab" data-bs-toggle="pill" data-bs-target="#main-map-elements" type="button" role="tab" aria-controls="main-map-elements" aria-selected="true">Main Map Elements</button>
-              <button class="nav-link text-start" id="authors-contributors-tab" data-bs-toggle="pill" data-bs-target="#authors-contributors" type="button" role="tab" aria-controls="authors-contributors" aria-selected="false">Authors & Contributors</button>
+              <button class="nav-link text-start" id="authors-contributors-tab" data-bs-toggle="pill" data-bs-target="#authors-contributors" type="button" role="tab" aria-controls="authors-contributors" aria-selected="false">Authors &amp; Contributors</button>
               <button class="nav-link text-start" id="teams-players-tab" data-bs-toggle="pill" data-bs-target="#teams-players" type="button" role="tab" aria-controls="teams-players" aria-selected="false">Teams/Players</button>
               <button class="nav-link text-start" id="kits-tab" data-bs-toggle="pill" data-bs-target="#kits" type="button" role="tab" aria-controls="kits" aria-selected="false">Kits</button>
               <button class="nav-link text-start" id="objectives-tab" data-bs-toggle="pill" data-bs-target="#objectives" type="button" role="tab" aria-controls="objectives" aria-selected="false">Objectives</button>
               <button class="nav-link text-start" id="filters-tab" data-bs-toggle="pill" data-bs-target="#filters" type="button" role="tab" aria-controls="filters" aria-selected="false">Filters</button>
               <button class="nav-link text-start" id="regions-tab" data-bs-toggle="pill" data-bs-target="#regions" type="button" role="tab" aria-controls="regions" aria-selected="false">Regions</button>
+              <button class="nav-link text-start" id="spawns-tab" data-bs-toggle="pill" data-bs-target="#spawns" type="button" role="tab" aria-controls="spawns" aria-selected="false">Spawns</button>
             </div>  
           </div>
           <!-- Center column -->
@@ -84,13 +85,13 @@
                   <select class="form-select" id="mapProto">
                       <option value="1">1.4.2</option>
                       <option value="2">1.4.1</option>
-                      <option value="3" selected>1.4.0 (recommended)</option>
-                      <option value="4">1.3.6</option>
+                      <option value="3" selected="selected">1.4.0 (recommended)</option>
+                      <!-- <option value="4">1.3.6</option>
                       <option value="5">1.3.5</option>
                       <option value="6">1.3.4</option>
                       <option value="7">1.3.3</option>
                       <option value="8">1.3.2</option>
-                      <option value="9">1.3.1</option>
+                      <option value="9">1.3.1</option> -->
                     </select>
                     <label for="mapProto">Protocol Version</label>
                  </div>        
@@ -122,12 +123,14 @@
                   <input type="text" class="form-control" id="authorUsername" placeholder="">
                   <label for="authorUsername">Author's Username</label>
                 </div>
+                <hr class="my-3">
                 <div class="text-end">
                   <div class="btn-group btn-group-sm" role="group" aria-label="Authors control">
                     <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Author</button>
                     <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Author</button>
                   </div>
                 </div>
+                <hr class="my-3">
                 <p class="h6">Contributors</p>
                 <div class="form-floating mb-3">
                   <input type="text" class="form-control" id="contributorUUID" placeholder="">
@@ -141,6 +144,7 @@
                   <input type="text" class="form-control" id="contributorUsername" placeholder="">
                   <label for="contributorUsername">Contributor's Username</label>
                 </div>
+                <hr class="my-3">
                 <div class="text-end">
                   <div class="btn-group btn-group-sm" role="group" aria-label="Authors control">
                     <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Contributor</button>
@@ -154,13 +158,29 @@
                   <input type="text" class="form-control" id="teamID" placeholder="">
                   <label for="teamID">Team ID</label>
                 </div>
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="teamName" placeholder="">
-                  <label for="teamName">Team Name</label>
+                <div class="input-group mb-3">
+                  <div class="form-floating flex-grow-1">
+                      <input type="text" class="form-control rounded-0 rounded-start" name="teamName" placeholder="">
+                      <label for="teamName">Team Name</label>
+                  </div>
+                  <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" id="teamPlural" value="" aria-label="Plural">
+                    <label class="form-check-label ms-2" for="teamPlural">Plural?</label>
+                  </div>
                 </div>
-                <div class="col">
-                  <div class="form-floating mb-3 w-50">
-                    <select class="form-select" id="teamColor">
+                <div class="form-floating mb-3">
+                  <select class="form-select" id="teamNameTag">
+                      <option value="1" selected="selected">-</option>
+                      <option value="2">True</option>
+                      <option value="3">False</option>
+                      <option value="4">Allies</option>
+                      <option value="5">Enemies</option>
+                    </select>
+                    <label for="teamNametag">Show nametags</label>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="form-floating flex-grow-1">
+                    <select class="form-select rounded-0 rounded-start" id="teamColor">
                       <option value="1">Black</option>
                       <option value="2">Dark Blue</option>
                       <option value="3">Dark Green</option>
@@ -180,11 +200,9 @@
                     </select>
                     <label for="teamColor">Team Color</label>
                   </div>
-                </div>
-                <div class="col">
-                  <div class="form-floating mb-3 w-50">
-                    <select class="form-select" id="teamColor">
-                      <option value="0" selected>-</option>
+                  <div class="form-floating flex-grow-1">
+                    <select class="form-select rounded-0 rounded-end" id="teamColor">
+                      <option value="0" selected="selected">-</option>
                       <option value="1">Black</option>
                       <option value="2">Dark Blue</option>
                       <option value="3">Dark Green</option>
@@ -205,6 +223,33 @@
                     <label for="teamColor">Team Overhead Color</label>
                   </div>
                 </div>
+                <div class="input-group mb-3">
+                  <div class="form-floating flex-grow-1">
+                    <input type="text" class="form-control rounded-0 rounded-start" id="teamMinSize" placeholder="1">
+                    <label for="teamMinSize">Minimum Size</label>
+                  </div>
+                  <div class="form-floating flex-grow-1">
+                    <input type="text" class="form-control rounded-0" id="teamMaxSize" placeholder="1">
+                    <label for="teamMaxSize">Maximum Size</label>
+                  </div>
+                  <div class="form-floating flex-grow-1">
+                    <input type="text" class="form-control" id="teamMaxOverfill" placeholder="1">
+                    <label for="teamMaxOverfill">Maximum Overfill</label>
+                  </div>
+                </div>
+                <!-- <div class="form-floating">
+                  <input type="text" class="form-control" id="teamMinSize" placeholder="1">
+                  <label for="teamMinSize">Minimum Size</label>
+                </div>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="teamMaxSize" placeholder="1">
+                  <label for="teamMaxSize">Maximum Size</label>
+                </div>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="teamMaxOverfill" placeholder="1">
+                  <label for="teamMaxOverfill">Maximum Overfill</label>
+                </div> -->
+                <hr class="my-3">
                 <div class="text-end">
                   <div class="btn-group btn-group-sm" role="group" aria-label="Teams control">
                     <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Team</button>
@@ -213,13 +258,78 @@
                 </div>
               </div>
               <!-- Kits content -->
-              <div class="tab-pane fade" id="kits" role="tabpanel" aria-labelledby="kits-tab" tabindex="0">KT...</div>
+              <div class="tab-pane fade" id="kits" role="tabpanel" aria-labelledby="kits-tab" tabindex="0">
+                <div class="text-end">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="kitID" placeholder="">
+                    <label for="kitID">Kit ID</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="kitFilter" placeholder="">
+                    <label for="kitFilter">Filter</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="kitParents" placeholder="">
+                    <label for="kitParents">Kit Parents</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <select class="form-select" id="kitForce">
+                        <option value="0" selected>-</option>
+                        <option value="1">True</option>
+                        <option value="2">False</option>
+                      </select>
+                      <label for="kitForce">Force Kit</label>
+                  </div>
+                  <div class="form-check form-check-inline mb-3 float-start">
+                    <input class="form-check-input" type="checkbox" id="kitPotionParticles" value="option1">
+                    <label class="form-check-label" for="kitPotionParticles">Show potion particles</label>
+                  </div>
+                  <div class="form-check form-check-inline mb-3 float-start">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Reset ender pearls</label>
+                  </div>
+                  <div class="btn-group btn-group-sm" role="group" aria-label="Kits control">
+                    <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Kit</button>
+                    <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Kit</button>
+                  </div>
+                </div>
+              </div>
               <!-- Objectives content -->
-              <div class="tab-pane fade" id="objectives" role="tabpanel" aria-labelledby="objectives-tab" tabindex="0">OB...</div>
+              <div class="tab-pane fade" id="objectives" role="tabpanel" aria-labelledby="objectives-tab" tabindex="0">OB...
+                <div class="text-end">
+                  <div class="btn-group btn-group-sm" role="group" aria-label="Objectives control">
+                    <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Objective</button>
+                    <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Objective</button>
+                  </div>
+                </div>
+              </div>
               <!-- Filters content -->
-              <div class="tab-pane fade" id="filters" role="tabpanel" aria-labelledby="filters-tab" tabindex="0">FI...</div>
+              <div class="tab-pane fade" id="filters" role="tabpanel" aria-labelledby="filters-tab" tabindex="0">FI...
+                <div class="text-end">
+                  <div class="btn-group btn-group-sm" role="group" aria-label="Filters control">
+                    <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Filter</button>
+                    <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Filter</button>
+                  </div>
+                </div>
+              </div>
               <!-- Regions content -->
-              <div class="tab-pane fade" id="regions" role="tabpanel" aria-labelledby="regions-tab" tabindex="0">RE...</div>
+              <div class="tab-pane fade" id="regions" role="tabpanel" aria-labelledby="regions-tab" tabindex="0">RE...
+                <div class="text-end">
+                  <div class="btn-group btn-group-sm" role="group" aria-label="Regions control">
+                    <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Region</button>
+                    <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Region</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Spawns content -->
+              <div class="tab-pane fade" id="spawns" role="tabpanel" aria-labelledby="spawn-tab" tabindex="0">SP...
+                <div class="text-end">
+                  <div class="btn-group btn-group-sm" role="group" aria-label="Spawns control">
+                    <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Spawn</button>
+                    <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Spawn</button>
+                  </div>
+                </div>
+              </div>
             </div>
             <!-- Input Control -->
             <hr class="my-3">
@@ -236,10 +346,50 @@
             <textarea class="form-control" id="textAreaExample" rows="8" placeholder="Your XML file will appear here once the required map details are populated." readonly></textarea>
             <hr class="my-3">
             <div class="text-center">
-                <label type="button" class="btn btn-primary"><i class="bi bi-upload"></i> Import XML<input type="file" hidden></label>
-                <button type="button" class="btn btn-primary"><i class="bi bi-download"></i> Export XML</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#importXMLModal"><i class="bi bi-upload"></i> Import XML</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exportXMLModal"><i class="bi bi-download"></i> Export XML</button>
                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#clearallModal"><i class="bi bi-trash3"></i> Clear All</button>
             </div>
+            <!-- Import XML modal -->
+            <div class="modal fade" tabindex="-1" id="importXMLModal">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Import XML <span class="badge bg-warning">Beta</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Select a valid <code>map.xml</code> file to import. This will clear any changes prior to the upload.</p>
+                    <div class="mb-3">
+                      <input class="form-control" type="file" id="xmlFileImport">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" disabled>Import</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Export XML modal -->
+            <div class="modal fade" tabindex="-1" id="exportXMLModal">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Export XML</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Your <code>map.xml</code> has been exported and is ready for download.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success">Download</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Clear All modal -->
             <div class="modal fade" tabindex="-1" id="clearallModal">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
