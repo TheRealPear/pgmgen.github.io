@@ -17,6 +17,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet" integrity="sha384-pRc2KzVNklDsDOJGRD8O1gWVq18w2cZK9D9PDPjHZM9ow3ozM5EhVrqK3dCna9fX" crossorigin="anonymous">
+    <link href="src/css/override.css" rel="stylesheet">
   </head>
   <body>
     <!-- Navigation bar -->
@@ -96,31 +97,135 @@
                     <label for="mapProto">Protocol Version</label>
                  </div>        
                  <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="mapName" placeholder="" required="true">
+                  <input type="text" class="form-control" id="mapName" placeholder=" " required="true">
                   <label for="mapName">Map Name</label>
                  </div>
                  <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="mapVersion" placeholder="1.0.0" value="1.0.0">
+                  <input type="text" class="form-control" id="mapVersion" placeholder="1.0.0">
                   <label for="mapVersion">Map Version</label>
                  </div>
-                 <div class="form-floating">
-                  <textarea class="form-control" style="height: 80px" placeholder="" id="mapDescription"></textarea>
+                 <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="mapCreationDate" placeholder="YYYY-MM-DD">
+                  <label for="mapCreationDate">Map Creation Date</label>
+                 </div>
+                 <div class="input-group mb-3">
+                  <div class="form-floating flex-grow-1">
+                    <select class="form-select rounded-0 rounded-start" id="mapPhase">
+                      <option value="1" selected="selected">-</option>
+                      <option value="2">Production (default)</option>
+                      <option value="3">Development</option>
+                    </select>
+                    <label for="mapPhase">Map Phase</label>
+                  </div>
+                  <div class="form-floating flex-grow-1">
+                    <select class="form-select rounded-0 rounded-end" id="mapEdition">
+                      <option value="0" selected="selected">-</option>
+                      <option value="1">Standard (default)</option>
+                      <option value="2">Ranked</option>
+                      <option value="3">Tournament</option>
+                    </select>
+                    <label for="mapEdition">Map Edition</label>
+                  </div>
+                </div>
+                 <div class="form-floating mb-3">
+                  <textarea class="form-control" style="height: 80px" placeholder=" " id="mapDescription"></textarea>
                   <label for="mapDescription">Map Objective</label>
                  </div>
+                 <div class="card mb-3">
+                  <div class="card-header">Map Gamemode(s)</div>
+                  <div class="card-body">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isAttackDefend" disabled>
+                      <label class="form-check-label" for="isAttackDefend">Attack/Defend</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isArcade">
+                      <label class="form-check-label" for="isArcade">Arcade</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isBlitz">
+                      <label class="form-check-label" for="isBlitz">Blitz</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isBlitzRage">
+                      <label class="form-check-label" for="isBlitzRage">Blitz: Rage</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isCTF">
+                      <label class="form-check-label" for="isCTF">Capture the Flag (CTF)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isCP" disabled>
+                      <label class="form-check-label" for="isCP">Capture the Point (CP)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isCTW">
+                      <label class="form-check-label" for="isCTW">Capture the Wool (CTW)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isDTC">
+                      <label class="form-check-label" for="isDTC">Destroy the Core (DTC)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isDTM">
+                      <label class="form-check-label" for="isDTM">Destroy the Monument (DTM)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isFFA" disabled>
+                      <label class="form-check-label" for="isFFA">Free for All (FFA)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isFFB" disabled>
+                      <label class="form-check-label" for="isFFB">Flag Football</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isKOTH">
+                      <label class="form-check-label" for="isKOTH">King of the Hill (KoTH)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isKOTF">
+                      <label class="form-check-label" for="isKOTF">King of the Flag (KoTF)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isMixed" disabled>
+                      <label class="form-check-label" for="isMixed">Mixed</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isRage" disabled>
+                      <label class="form-check-label" for="isRage">Rage</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isRFW" disabled>
+                      <label class="form-check-label" for="isRFW">Race for Wool</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isScorebox" disabled>
+                      <label class="form-check-label" for="isScorebox">Scorebox</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isTDM" disabled>
+                      <label class="form-check-label" for="isTDM">Team Deathmatch (TDM)</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="mapName" placeholder=" " required="gameTitle">
+                  <label for="gameTitle">Game Title</label>
+                </div>
               </div>
               <!-- Authors & Contributors content -->
               <div class="tab-pane fade" id="authors-contributors" role="tabpanel" aria-labelledby="authors-contributors-tab" tabindex="0">
                 <p class="h6">Authors</p>
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="authorUUID" placeholder="">
+                  <input type="text" class="form-control" id="authorUUID" placeholder=" ">
                   <label for="authorUUID">Author's UUID</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="authorNotes" placeholder="">
+                  <input type="text" class="form-control" id="authorNotes" placeholder=" ">
                   <label for="authorNotes">Author's Contribution Notes</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="authorUsername" placeholder="">
+                  <input type="text" class="form-control" id="authorUsername" placeholder=" ">
                   <label for="authorUsername">Author's Username</label>
                 </div>
                 <hr class="my-3">
@@ -133,15 +238,15 @@
                 <hr class="my-3">
                 <p class="h6">Contributors</p>
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="contributorUUID" placeholder="">
+                  <input type="text" class="form-control" id="contributorUUID" placeholder=" ">
                   <label for="contributorUUID">Contributor's UUID</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="contributorNotes" placeholder="">
+                  <input type="text" class="form-control" id="contributorNotes" placeholder=" ">
                   <label for="contributorNotes">Contributor's Contribution Notes</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="contributorUsername" placeholder="">
+                  <input type="text" class="form-control" id="contributorUsername" placeholder=" ">
                   <label for="contributorUsername">Contributor's Username</label>
                 </div>
                 <hr class="my-3">
@@ -155,12 +260,12 @@
               <!-- Teams/Players content -->
               <div class="tab-pane fade" id="teams-players" role="tabpanel" aria-labelledby="teams-players-tab" tabindex="0">
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="teamID" placeholder="">
+                  <input type="text" class="form-control" id="teamID" placeholder=" ">
                   <label for="teamID">Team ID</label>
                 </div>
                 <div class="input-group mb-3">
                   <div class="form-floating flex-grow-1">
-                      <input type="text" class="form-control rounded-0 rounded-start" name="teamName" placeholder="">
+                      <input type="text" class="form-control rounded-0 rounded-start" name="teamName" placeholder=" ">
                       <label for="teamName">Team Name</label>
                   </div>
                   <div class="input-group-text">
@@ -229,11 +334,11 @@
                     <label for="teamMinSize">Minimum Size</label>
                   </div>
                   <div class="form-floating flex-grow-1">
-                    <input type="text" class="form-control rounded-0" id="teamMaxSize" placeholder="1">
+                    <input type="text" class="form-control rounded-0" id="teamMaxSize" placeholder=" ">
                     <label for="teamMaxSize">Maximum Size</label>
                   </div>
                   <div class="form-floating flex-grow-1">
-                    <input type="text" class="form-control" id="teamMaxOverfill" placeholder="1">
+                    <input type="text" class="form-control" id="teamMaxOverfill" placeholder=" ">
                     <label for="teamMaxOverfill">Maximum Overfill</label>
                   </div>
                 </div>
@@ -259,35 +364,62 @@
               </div>
               <!-- Kits content -->
               <div class="tab-pane fade" id="kits" role="tabpanel" aria-labelledby="kits-tab" tabindex="0">
-                <div class="text-end">
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="kitID" placeholder="">
-                    <label for="kitID">Kit ID</label>
+                <div class="input-group mb-3">
+                  <div class="form-floating flex-grow-1">
+                      <input type="text" class="form-control rounded-0 rounded-start" name="kitID" placeholder=" ">
+                      <label for="kitID">Kit ID</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="kitFilter" placeholder="">
-                    <label for="kitFilter">Filter</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="kitParents" placeholder="">
+                  <div class="form-floating flex-grow-1">
+                    <input type="text" class="form-control rounded-0 rounded-end" name="kitParents" placeholder=" ">
                     <label for="kitParents">Kit Parents</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <select class="form-select" id="kitForce">
-                        <option value="0" selected>-</option>
-                        <option value="1">True</option>
-                        <option value="2">False</option>
-                      </select>
-                      <label for="kitForce">Force Kit</label>
-                  </div>
-                  <div class="form-check form-check-inline mb-3 float-start">
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="kitFilter" placeholder=" ">
+                  <label for="kitFilter">Filter</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <select class="form-select" id="kitForce">
+                      <option value="0" selected>-</option>
+                      <option value="1">True</option>
+                      <option value="2">False</option>
+                    </select>
+                    <label for="kitForce">Force Kit</label>
+                </div>
+                <div class="text-start mb-3">
+                  <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="kitPotionParticles" value="option1">
                     <label class="form-check-label" for="kitPotionParticles">Show potion particles</label>
                   </div>
-                  <div class="form-check form-check-inline mb-3 float-start">
+                  <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                     <label class="form-check-label" for="inlineCheckbox2">Reset ender pearls</label>
                   </div>
+                </div>
+                <div class="text-end">
+                  <div class="input-group mb-3">
+                    <div class="form-floating flex-grow-1 w-25">
+                      <input type="text" class="form-control rounded-0 rounded-start" name="itemSlot" placeholder=" ">
+                      <label for="itemSlot">Slot</label>
+                    </div>
+                    <div class="form-floating flex-grow-1 w-25">
+                      <input type="text" class="form-control rounded-0" name="itemCount" placeholder=" ">
+                      <label for="itemCount">Count</label>
+                    </div>
+                    <div class="form-floating flex-grow-1">
+                      <input type="text" class="form-control rounded-0 rounded-end" name="itemType" placeholder=" ">
+                      <label for="itemType">Item</label>
+                    </div>
+                    <div class="input-group-text">
+                      <input class="form-check-input mt-0" type="checkbox" id="itemUnbreakable" value="" aria-label="Plural">
+                      <label class="form-check-label ms-2" for="itemUnbreakable">Unbreakable</label>
+                    </div>
+                  </div>
+                  <div class="btn-group btn-group-sm" role="group" aria-label="Item control">
+                    <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Item</button>
+                    <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Item</button>
+                  </div>
+                  <hr class="my-3">
                   <div class="btn-group btn-group-sm" role="group" aria-label="Kits control">
                     <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Kit</button>
                     <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Kit</button>
