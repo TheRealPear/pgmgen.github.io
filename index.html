@@ -445,7 +445,29 @@
                 </div>
               </div>
               <!-- Regions content -->
-              <div class="tab-pane fade" id="regions" role="tabpanel" aria-labelledby="regions-tab" tabindex="0">RE...
+              <div class="tab-pane fade" id="regions" role="tabpanel" aria-labelledby="regions-tab" tabindex="0">
+                <div class="form-floating mb-3">
+                  <select class="form-select" id="regionType">
+                    <optgroup label="Block-Bounded Regions">
+                      <option value="1">Cuboid</option>
+                      <option value="2">Cylinder</option>
+                      <option value="3">Block</option>
+                      <option value="4">Sphere</option>
+                      <option value="5">Point</option>
+                    </optgroup>
+                    <optgroup label="Unbounded Regions">
+                      <option value="6">Rectangle</option>
+                      <option value="7">Circle</option>
+                      <option value="8">Half</option>
+                      <option value="9">Below/Above</option>
+                    </optgroup>
+                    </select>
+                    <label for="regionType">Region Type</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="regionID" placeholder=" ">
+                  <label for="regionID">Region ID</label>
+                </div>
                 <div class="text-end">
                   <div class="btn-group btn-group-sm" role="group" aria-label="Regions control">
                     <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Region</button>
@@ -454,7 +476,51 @@
                 </div>
               </div>
               <!-- Spawns content -->
-              <div class="tab-pane fade" id="spawns" role="tabpanel" aria-labelledby="spawn-tab" tabindex="0">SP...
+              <div class="tab-pane fade" id="spawns" role="tabpanel" aria-labelledby="spawn-tab" tabindex="0">
+                <div class="form-floating mb-3">
+                  <select class="form-select" id="spawnType">
+                      <option value="1">Team/Individual spawn</option>
+                      <option value="2">Default spawn (limit: 1)</option>
+                    </select>
+                    <label for="spawnType">Spawn Type</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="spawnTeam" placeholder=" ">
+                  <label for="spawnTeam">Spawn Team</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="spawnFilter" placeholder=" ">
+                  <label for="spawnFilter">Spawn Filter</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="spawnKit" placeholder=" ">
+                  <label for="spawnKit">Spawn Kit</label>
+                </div>
+                <div class="card mb-3">
+                  <div class="card-header">Spawn Properties</div>
+                  <div class="card-body">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isSpawnSafe">
+                      <label class="form-check-label" for="isSpawnSafe">Safe</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isSpawnSequential">
+                      <label class="form-check-label" for="isSpawnSequential">Sequential</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isSpawnSpread">
+                      <label class="form-check-label" for="isSpawnSpread">Spread</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isSpawnExclusive">
+                      <label class="form-check-label" for="isSpawnExclusive">Exclusive</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isSpawnPersistent">
+                      <label class="form-check-label" for="isSpawnPersistent">Persistent</label>
+                    </div>
+                  </div>
+                </div>
                 <div class="text-end">
                   <div class="btn-group btn-group-sm" role="group" aria-label="Spawns control">
                     <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Spawn</button>
