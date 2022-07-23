@@ -76,289 +76,301 @@
             <div class="tab-content" id="sidebar-tabContent">
               <!-- Main Map Elements content -->
               <div class="tab-pane fade show active" id="main-map-elements" role="tabpanel" aria-labelledby="main-map-elements" tabindex="0">
-                 <div class="form-floating mb-3">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="xmldeclareChecked" checked>
-                    <label class="form-check-label" for="xmldeclareChecked">Include XML declaration tag</label>
-                  </div>
-                 </div>
-                <div class="form-floating mb-3">
-                  <select class="form-select" id="mapProto">
-                      <option value="1">1.4.2</option>
-                      <option value="2">1.4.1</option>
-                      <option value="3" selected="selected">1.4.0 (recommended)</option>
-                      <!-- <option value="4">1.3.6</option>
-                      <option value="5">1.3.5</option>
-                      <option value="6">1.3.4</option>
-                      <option value="7">1.3.3</option>
-                      <option value="8">1.3.2</option>
-                      <option value="9">1.3.1</option> -->
-                    </select>
-                    <label for="mapProto">Protocol Version</label>
-                 </div>        
-                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="mapName" placeholder=" " required="true">
-                  <label for="mapName">Map Name</label>
-                 </div>
-                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="mapVersion" placeholder="1.0.0">
-                  <label for="mapVersion">Map Version</label>
-                 </div>
-                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="mapCreationDate" placeholder="YYYY-MM-DD">
-                  <label for="mapCreationDate">Map Creation Date</label>
-                 </div>
-                 <div class="input-group mb-3">
-                  <div class="form-floating flex-grow-1">
-                    <select class="form-select rounded-0 rounded-start" id="mapPhase">
-                      <option value="1" selected="selected">-</option>
-                      <option value="2">Production (default)</option>
-                      <option value="3">Development</option>
-                    </select>
-                    <label for="mapPhase">Map Phase</label>
-                  </div>
-                  <div class="form-floating flex-grow-1">
-                    <select class="form-select rounded-0 rounded-end" id="mapEdition">
-                      <option value="0" selected="selected">-</option>
-                      <option value="1">Standard (default)</option>
-                      <option value="2">Ranked</option>
-                      <option value="3">Tournament</option>
-                    </select>
-                    <label for="mapEdition">Map Edition</label>
+                <div class="card mb-3">
+                  <div class="card-header">PGM Specifications</div>
+                  <div class="card-body">
+                    <div class="form-floating mb-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="xmldeclareChecked" checked>
+                        <label class="form-check-label" for="xmldeclareChecked">Include XML declaration tag</label>
+                      </div>
+                    </div>
+                    <div class="form-floating">
+                      <select class="form-select" id="mapProto">
+                          <option value="1">1.4.2</option>
+                          <option value="2">1.4.1</option>
+                          <option value="3" selected="selected">1.4.0 (recommended)</option>
+                          <!-- <option value="4">1.3.6</option>
+                          <option value="5">1.3.5</option>
+                          <option value="6">1.3.4</option>
+                          <option value="7">1.3.3</option>
+                          <option value="8">1.3.2</option>
+                          <option value="9">1.3.1</option> -->
+                        </select>
+                        <label for="mapProto">Protocol Version</label>
+                     </div>
                   </div>
                 </div>
-                 <div class="form-floating mb-3">
-                  <textarea class="form-control" style="height: 80px" placeholder=" " id="mapDescription"></textarea>
-                  <label for="mapDescription">Map Objective</label>
-                 </div>
+                <div class="card mb-3">
+                  <div class="card-header">Map Details</div>
+                  <div class="card-body">
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="mapName" placeholder=" " required="true">
+                      <label for="mapName">Map Name</label>
+                     </div>
+                     <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="mapVersion" placeholder="1.0.0">
+                      <label for="mapVersion">Map Version</label>
+                     </div>
+                     <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="mapCreationDate" placeholder="YYYY-MM-DD">
+                      <label for="mapCreationDate">Map Creation Date</label>
+                     </div>
+                     <div class="input-group mb-3">
+                      <div class="form-floating flex-grow-1">
+                        <select class="form-select rounded-0 rounded-start" id="mapPhase">
+                          <option value="1" selected="selected">-</option>
+                          <option value="2">Production (default)</option>
+                          <option value="3">Development</option>
+                        </select>
+                        <label for="mapPhase">Map Phase</label>
+                      </div>
+                      <div class="form-floating flex-grow-1">
+                        <select class="form-select rounded-0 rounded-end" id="mapEdition">
+                          <option value="0" selected="selected">-</option>
+                          <option value="1">Standard (default)</option>
+                          <option value="2">Ranked</option>
+                          <option value="3">Tournament</option>
+                        </select>
+                        <label for="mapEdition">Map Edition</label>
+                      </div>
+                    </div>
+                     <div class="form-floating">
+                      <textarea class="form-control" style="height: 80px" placeholder=" " id="mapDescription"></textarea>
+                      <label for="mapDescription">Map Objective</label>
+                     </div>
+                </div>
+                </div>
                  <div class="card mb-3">
                   <div class="card-header">Map Gamemode(s)</div>
                   <div class="card-body">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isAttackDefend" disabled>
-                      <label class="form-check-label" for="isAttackDefend">Attack/Defend</label>
+                    <div class="mb-3">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isAttackDefend" disabled>
+                        <label class="form-check-label" for="isAttackDefend">Attack/Defend</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isArcade">
+                        <label class="form-check-label" for="isArcade">Arcade</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isBlitz">
+                        <label class="form-check-label" for="isBlitz">Blitz</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isBlitzRage">
+                        <label class="form-check-label" for="isBlitzRage">Blitz: Rage</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isCTF">
+                        <label class="form-check-label" for="isCTF">Capture the Flag (CTF)</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isCP" disabled>
+                        <label class="form-check-label" for="isCP">Capture the Point (CP)</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isCTW">
+                        <label class="form-check-label" for="isCTW">Capture the Wool (CTW)</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isDTC">
+                        <label class="form-check-label" for="isDTC">Destroy the Core (DTC)</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isDTM">
+                        <label class="form-check-label" for="isDTM">Destroy the Monument (DTM)</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isFFA" disabled>
+                        <label class="form-check-label" for="isFFA">Free for All (FFA)</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isFFB" disabled>
+                        <label class="form-check-label" for="isFFB">Flag Football</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isKOTH">
+                        <label class="form-check-label" for="isKOTH">King of the Hill (KoTH)</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isKOTF">
+                        <label class="form-check-label" for="isKOTF">King of the Flag (KoTF)</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isMixed" disabled>
+                        <label class="form-check-label" for="isMixed">Mixed</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isRage" disabled>
+                        <label class="form-check-label" for="isRage">Rage</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isRFW" disabled>
+                        <label class="form-check-label" for="isRFW">Race for Wool</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isScorebox" disabled>
+                        <label class="form-check-label" for="isScorebox">Scorebox</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="isTDM" disabled>
+                        <label class="form-check-label" for="isTDM">Team Deathmatch (TDM)</label>
+                      </div>
                     </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isArcade">
-                      <label class="form-check-label" for="isArcade">Arcade</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isBlitz">
-                      <label class="form-check-label" for="isBlitz">Blitz</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isBlitzRage">
-                      <label class="form-check-label" for="isBlitzRage">Blitz: Rage</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isCTF">
-                      <label class="form-check-label" for="isCTF">Capture the Flag (CTF)</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isCP" disabled>
-                      <label class="form-check-label" for="isCP">Capture the Point (CP)</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isCTW">
-                      <label class="form-check-label" for="isCTW">Capture the Wool (CTW)</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isDTC">
-                      <label class="form-check-label" for="isDTC">Destroy the Core (DTC)</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isDTM">
-                      <label class="form-check-label" for="isDTM">Destroy the Monument (DTM)</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isFFA" disabled>
-                      <label class="form-check-label" for="isFFA">Free for All (FFA)</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isFFB" disabled>
-                      <label class="form-check-label" for="isFFB">Flag Football</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isKOTH">
-                      <label class="form-check-label" for="isKOTH">King of the Hill (KoTH)</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isKOTF">
-                      <label class="form-check-label" for="isKOTF">King of the Flag (KoTF)</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isMixed" disabled>
-                      <label class="form-check-label" for="isMixed">Mixed</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isRage" disabled>
-                      <label class="form-check-label" for="isRage">Rage</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isRFW" disabled>
-                      <label class="form-check-label" for="isRFW">Race for Wool</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isScorebox" disabled>
-                      <label class="form-check-label" for="isScorebox">Scorebox</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isTDM" disabled>
-                      <label class="form-check-label" for="isTDM">Team Deathmatch (TDM)</label>
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="mapName" placeholder=" " required="gameTitle">
+                      <label for="gameTitle">Game Title</label>
                     </div>
                   </div>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="mapName" placeholder=" " required="gameTitle">
-                  <label for="gameTitle">Game Title</label>
                 </div>
               </div>
               <!-- Authors & Contributors content -->
               <div class="tab-pane fade" id="authors-contributors" role="tabpanel" aria-labelledby="authors-contributors-tab" tabindex="0">
-                <p class="h6">Authors</p>
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="authorUUID" placeholder=" ">
-                  <label for="authorUUID">Author's UUID</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="authorNotes" placeholder=" ">
-                  <label for="authorNotes">Author's Contribution Notes</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="authorUsername" placeholder=" ">
-                  <label for="authorUsername">Author's Username</label>
-                </div>
-                <hr class="my-3">
-                <div class="text-end">
-                  <div class="btn-group btn-group-sm" role="group" aria-label="Authors control">
-                    <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Author</button>
-                    <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Author</button>
+                <div class="card mb-3">
+                  <div class="card-header">Authors</div>
+                  <div class="card-body">
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="authorUUID" placeholder=" ">
+                      <label for="authorUUID">Author's UUID</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="authorNotes" placeholder=" ">
+                      <label for="authorNotes">Author's Contribution Notes</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="authorUsername" placeholder=" ">
+                      <label for="authorUsername">Author's Username</label>
+                    </div>
+                    <hr class="my-3">
+                    <div class="text-end">
+                      <div class="btn-group btn-group-sm" role="group" aria-label="Authors control">
+                        <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Author</button>
+                        <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Author</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <hr class="my-3">
-                <p class="h6">Contributors</p>
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="contributorUUID" placeholder=" ">
-                  <label for="contributorUUID">Contributor's UUID</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="contributorNotes" placeholder=" ">
-                  <label for="contributorNotes">Contributor's Contribution Notes</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="contributorUsername" placeholder=" ">
-                  <label for="contributorUsername">Contributor's Username</label>
-                </div>
-                <hr class="my-3">
-                <div class="text-end">
-                  <div class="btn-group btn-group-sm" role="group" aria-label="Authors control">
-                    <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Contributor</button>
-                    <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Contributor</button>
+                <div class="card mb-3">
+                  <div class="card-header">Contributors</div>
+                  <div class="card-body">
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="authorUUID" placeholder=" ">
+                      <label for="authorUUID">Contributor's UUID</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="authorNotes" placeholder=" ">
+                      <label for="authorNotes">Contributor's Contribution Notes</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="authorUsername" placeholder=" ">
+                      <label for="authorUsername">Contributor's Username</label>
+                    </div>
+                    <hr class="my-3">
+                    <div class="text-end">
+                      <div class="btn-group btn-group-sm" role="group" aria-label="Authors control">
+                        <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Contributor</button>
+                        <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Contributor</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
               <!-- Teams/Players content -->
               <div class="tab-pane fade" id="teams-players" role="tabpanel" aria-labelledby="teams-players-tab" tabindex="0">
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="teamID" placeholder=" ">
-                  <label for="teamID">Team ID</label>
-                </div>
-                <div class="input-group mb-3">
-                  <div class="form-floating flex-grow-1">
-                      <input type="text" class="form-control rounded-0 rounded-start" name="teamName" placeholder=" ">
-                      <label for="teamName">Team Name</label>
-                  </div>
-                  <div class="input-group-text">
-                    <input class="form-check-input mt-0" type="checkbox" id="teamPlural" value="" aria-label="Plural">
-                    <label class="form-check-label ms-2" for="teamPlural">Plural?</label>
-                  </div>
-                </div>
-                <div class="form-floating mb-3">
-                  <select class="form-select" id="teamNameTag">
-                      <option value="1" selected="selected">-</option>
-                      <option value="2">True</option>
-                      <option value="3">False</option>
-                      <option value="4">Allies</option>
-                      <option value="5">Enemies</option>
-                    </select>
-                    <label for="teamNametag">Show nametags</label>
-                </div>
-                <div class="input-group mb-3">
-                  <div class="form-floating flex-grow-1">
-                    <select class="form-select rounded-0 rounded-start" id="teamColor">
-                      <option value="1">Black</option>
-                      <option value="2">Dark Blue</option>
-                      <option value="3">Dark Green</option>
-                      <option value="4">Dark Aqua</option>
-                      <option value="5">Dark Red</option>
-                      <option value="6">Dark Purple</option>
-                      <option value="7">Gold</option>
-                      <option value="8">Gray</option>
-                      <option value="9">Dark Gray</option>
-                      <option value="10">Blue</option>
-                      <option value="11">Green</option>
-                      <option value="12">Aqua</option>
-                      <option value="13">Red</option>
-                      <option value="14">Light Purple</option>
-                      <option value="15">Yellow</option>
-                      <option value="16">White</option>
-                    </select>
-                    <label for="teamColor">Team Color</label>
-                  </div>
-                  <div class="form-floating flex-grow-1">
-                    <select class="form-select rounded-0 rounded-end" id="teamColor">
-                      <option value="0" selected="selected">-</option>
-                      <option value="1">Black</option>
-                      <option value="2">Dark Blue</option>
-                      <option value="3">Dark Green</option>
-                      <option value="4">Dark Aqua</option>
-                      <option value="5">Dark Red</option>
-                      <option value="6">Dark Purple</option>
-                      <option value="7">Gold</option>
-                      <option value="8">Gray</option>
-                      <option value="9">Dark Gray</option>
-                      <option value="10">Blue</option>
-                      <option value="11">Green</option>
-                      <option value="12">Aqua</option>
-                      <option value="13">Red</option>
-                      <option value="14">Light Purple</option>
-                      <option value="15">Yellow</option>
-                      <option value="16">White</option>
-                    </select>
-                    <label for="teamColor">Team Overhead Color</label>
-                  </div>
-                </div>
-                <div class="input-group mb-3">
-                  <div class="form-floating flex-grow-1">
-                    <input type="text" class="form-control rounded-0 rounded-start" id="teamMinSize" placeholder="1">
-                    <label for="teamMinSize">Minimum Size</label>
-                  </div>
-                  <div class="form-floating flex-grow-1">
-                    <input type="text" class="form-control rounded-0" id="teamMaxSize" placeholder=" ">
-                    <label for="teamMaxSize">Maximum Size</label>
-                  </div>
-                  <div class="form-floating flex-grow-1">
-                    <input type="text" class="form-control" id="teamMaxOverfill" placeholder=" ">
-                    <label for="teamMaxOverfill">Maximum Overfill</label>
-                  </div>
-                </div>
-                <!-- <div class="form-floating">
-                  <input type="text" class="form-control" id="teamMinSize" placeholder="1">
-                  <label for="teamMinSize">Minimum Size</label>
-                </div>
-                <div class="form-floating">
-                  <input type="text" class="form-control" id="teamMaxSize" placeholder="1">
-                  <label for="teamMaxSize">Maximum Size</label>
-                </div>
-                <div class="form-floating">
-                  <input type="text" class="form-control" id="teamMaxOverfill" placeholder="1">
-                  <label for="teamMaxOverfill">Maximum Overfill</label>
-                </div> -->
-                <hr class="my-3">
-                <div class="text-end">
-                  <div class="btn-group btn-group-sm" role="group" aria-label="Teams control">
-                    <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Team</button>
-                    <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Team</button>
+                <div class="card mb-3">
+                  <div class="card-header">Teams</div>
+                  <div class="card-body">
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="teamID" placeholder=" ">
+                      <label for="teamID">Team ID</label>
+                    </div>
+                    <div class="input-group mb-3">
+                      <div class="form-floating flex-grow-1">
+                          <input type="text" class="form-control rounded-0 rounded-start" name="teamName" placeholder=" ">
+                          <label for="teamName">Team Name</label>
+                      </div>
+                      <div class="input-group-text">
+                        <input class="form-check-input mt-0" type="checkbox" id="teamPlural" value="" aria-label="Plural">
+                        <label class="form-check-label ms-2" for="teamPlural">Plural?</label>
+                      </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <select class="form-select" id="teamNameTag">
+                          <option value="1" selected="selected">-</option>
+                          <option value="2">True</option>
+                          <option value="3">False</option>
+                          <option value="4">Allies</option>
+                          <option value="5">Enemies</option>
+                        </select>
+                        <label for="teamNametag">Show nametags</label>
+                    </div>
+                    <div class="input-group mb-3">
+                      <div class="form-floating flex-grow-1">
+                        <select class="form-select rounded-0 rounded-start" id="teamColor">
+                          <option value="1">Black</option>
+                          <option value="2">Dark Blue</option>
+                          <option value="3">Dark Green</option>
+                          <option value="4">Dark Aqua</option>
+                          <option value="5">Dark Red</option>
+                          <option value="6">Dark Purple</option>
+                          <option value="7">Gold</option>
+                          <option value="8">Gray</option>
+                          <option value="9">Dark Gray</option>
+                          <option value="10">Blue</option>
+                          <option value="11">Green</option>
+                          <option value="12">Aqua</option>
+                          <option value="13">Red</option>
+                          <option value="14">Light Purple</option>
+                          <option value="15">Yellow</option>
+                          <option value="16">White</option>
+                        </select>
+                        <label for="teamColor">Team Color</label>
+                      </div>
+                      <div class="form-floating flex-grow-1">
+                        <select class="form-select rounded-0 rounded-end" id="teamColor">
+                          <option value="0" selected="selected">-</option>
+                          <option value="1">Black</option>
+                          <option value="2">Dark Blue</option>
+                          <option value="3">Dark Green</option>
+                          <option value="4">Dark Aqua</option>
+                          <option value="5">Dark Red</option>
+                          <option value="6">Dark Purple</option>
+                          <option value="7">Gold</option>
+                          <option value="8">Gray</option>
+                          <option value="9">Dark Gray</option>
+                          <option value="10">Blue</option>
+                          <option value="11">Green</option>
+                          <option value="12">Aqua</option>
+                          <option value="13">Red</option>
+                          <option value="14">Light Purple</option>
+                          <option value="15">Yellow</option>
+                          <option value="16">White</option>
+                        </select>
+                        <label for="teamColor">Team Overhead Color</label>
+                      </div>
+                    </div>
+                    <div class="input-group mb-3">
+                      <div class="form-floating flex-grow-1">
+                        <input type="text" class="form-control rounded-0 rounded-start" id="teamMinSize" placeholder="1">
+                        <label for="teamMinSize">Minimum Size</label>
+                      </div>
+                      <div class="form-floating flex-grow-1">
+                        <input type="text" class="form-control rounded-0" id="teamMaxSize" placeholder=" ">
+                        <label for="teamMaxSize">Maximum Size</label>
+                      </div>
+                      <div class="form-floating flex-grow-1">
+                        <input type="text" class="form-control" id="teamMaxOverfill" placeholder=" ">
+                        <label for="teamMaxOverfill">Maximum Overfill</label>
+                      </div>
+                    </div>
+                    <hr class="my-3">
+                    <div class="text-end">
+                      <div class="btn-group btn-group-sm" role="group" aria-label="Teams control">
+                        <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Team</button>
+                        <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Team</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
