@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PGM XML Generator</title>
@@ -376,65 +375,77 @@
               </div>
               <!-- Kits content -->
               <div class="tab-pane fade" id="kits" role="tabpanel" aria-labelledby="kits-tab" tabindex="0">
-                <div class="input-group mb-3">
-                  <div class="form-floating flex-grow-1">
-                      <input type="text" class="form-control rounded-0 rounded-start" name="kitID" placeholder=" ">
-                      <label for="kitID">Kit ID</label>
-                  </div>
-                  <div class="form-floating flex-grow-1">
-                    <input type="text" class="form-control rounded-0 rounded-end" name="kitParents" placeholder=" ">
-                    <label for="kitParents">Kit Parents</label>
-                  </div>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="kitFilter" placeholder=" ">
-                  <label for="kitFilter">Filter</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <select class="form-select" id="kitForce">
-                      <option value="0" selected>-</option>
-                      <option value="1">True</option>
-                      <option value="2">False</option>
-                    </select>
-                    <label for="kitForce">Force Kit</label>
-                </div>
-                <div class="text-start mb-3">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="kitPotionParticles" value="option1">
-                    <label class="form-check-label" for="kitPotionParticles">Show potion particles</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">Reset ender pearls</label>
-                  </div>
-                </div>
-                <div class="text-end">
-                  <div class="input-group mb-3">
-                    <div class="form-floating flex-grow-1 w-25">
-                      <input type="text" class="form-control rounded-0 rounded-start" name="itemSlot" placeholder=" ">
-                      <label for="itemSlot">Slot</label>
+                <div class="card mb-3">
+                  <div class="card-header">Kit</div>
+                  <div class="card-body">
+                    <div class="input-group mb-3">
+                      <div class="form-floating flex-grow-1">
+                          <input type="text" class="form-control rounded-0 rounded-start" name="kitID" placeholder=" ">
+                          <label for="kitID">Kit ID</label>
+                      </div>
+                      <div class="form-floating flex-grow-1">
+                        <input type="text" class="form-control rounded-0 rounded-end" name="kitParents" placeholder=" ">
+                        <label for="kitParents">Kit Parents</label>
+                      </div>
                     </div>
-                    <div class="form-floating flex-grow-1 w-25">
-                      <input type="text" class="form-control rounded-0" name="itemCount" placeholder=" ">
-                      <label for="itemCount">Count</label>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="kitFilter" placeholder=" ">
+                      <label for="kitFilter">Filter</label>
                     </div>
-                    <div class="form-floating flex-grow-1">
-                      <input type="text" class="form-control rounded-0 rounded-end" name="itemType" placeholder=" ">
-                      <label for="itemType">Item</label>
+                    <div class="form-floating mb-3">
+                      <select class="form-select" id="kitForce">
+                          <option value="0" selected>-</option>
+                          <option value="1">True</option>
+                          <option value="2">False</option>
+                        </select>
+                        <label for="kitForce">Force Kit</label>
                     </div>
-                    <div class="input-group-text">
-                      <input class="form-check-input mt-0" type="checkbox" id="itemUnbreakable" value="" aria-label="Plural">
-                      <label class="form-check-label ms-2" for="itemUnbreakable">Unbreakable</label>
+                    <div class="text-start mb-3">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="kitPotionParticles" value="option1">
+                        <label class="form-check-label" for="kitPotionParticles">Show potion particles</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">Reset ender pearls</label>
+                      </div>
                     </div>
-                  </div>
-                  <div class="btn-group btn-group-sm" role="group" aria-label="Item control">
-                    <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Item</button>
-                    <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Item</button>
-                  </div>
-                  <hr class="my-3">
-                  <div class="btn-group btn-group-sm" role="group" aria-label="Kits control">
-                    <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Kit</button>
-                    <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Kit</button>
+                    <div class="card mb-3">
+                      <div class="card-header">Item</div>
+                      <div class="card-body">
+                        <div class="text-end">
+                          <div class="input-group mb-3">
+                            <div class="form-floating flex-grow-1 w-25">
+                              <input type="text" class="form-control rounded-0 rounded-start" name="itemSlot" placeholder=" ">
+                              <label for="itemSlot">Slot</label>
+                            </div>
+                            <div class="form-floating flex-grow-1 w-25">
+                              <input type="text" class="form-control rounded-0" name="itemCount" placeholder=" ">
+                              <label for="itemCount">Count</label>
+                            </div>
+                            <div class="form-floating flex-grow-1">
+                              <input type="text" class="form-control rounded-0 rounded-end" name="itemType" placeholder=" ">
+                              <label for="itemType">Item</label>
+                            </div>
+                            <div class="input-group-text">
+                              <input class="form-check-input mt-0" type="checkbox" id="itemUnbreakable" value="" aria-label="Plural">
+                              <label class="form-check-label ms-2" for="itemUnbreakable">Unbreakable</label>
+                            </div>
+                          </div>
+                          <div class="btn-group btn-group-sm" role="group" aria-label="Item control">
+                            <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Item</button>
+                            <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Item</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="my-3">
+                    <div class="text-end">
+                      <div class="btn-group btn-group-sm" role="group" aria-label="Kits control">
+                        <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Kit</button>
+                        <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Kit</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -489,59 +500,111 @@
               </div>
               <!-- Spawns content -->
               <div class="tab-pane fade" id="spawns" role="tabpanel" aria-labelledby="spawn-tab" tabindex="0">
-                <div class="form-floating mb-3">
-                  <select class="form-select" id="spawnType">
-                      <option value="1">Team/Individual spawn</option>
-                      <option value="2">Default spawn (limit: 1)</option>
-                    </select>
-                    <label for="spawnType">Spawn Type</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="spawnTeam" placeholder=" ">
-                  <label for="spawnTeam">Spawn Team</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="spawnFilter" placeholder=" ">
-                  <label for="spawnFilter">Spawn Filter</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="spawnKit" placeholder=" ">
-                  <label for="spawnKit">Spawn Kit</label>
-                </div>
                 <div class="card mb-3">
-                  <div class="card-header">Spawn Properties</div>
+                  <div class="card-header">Spawn</div>
                   <div class="card-body">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isSpawnSafe">
-                      <label class="form-check-label" for="isSpawnSafe">Safe</label>
+                    <div class="form-floating mb-3">
+                      <select class="form-select" id="spawnType">
+                          <option value="1">Team/Individual spawn</option>
+                          <option value="2">Default spawn (limit: 1)</option>
+                        </select>
+                        <label for="spawnType">Spawn Type</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isSpawnSequential">
-                      <label class="form-check-label" for="isSpawnSequential">Sequential</label>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="spawnTeam" placeholder=" ">
+                      <label for="spawnTeam">Spawn Team</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isSpawnSpread">
-                      <label class="form-check-label" for="isSpawnSpread">Spread</label>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="spawnFilter" placeholder=" ">
+                      <label for="spawnFilter">Spawn Filter</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isSpawnExclusive">
-                      <label class="form-check-label" for="isSpawnExclusive">Exclusive</label>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="spawnKit" placeholder=" ">
+                      <label for="spawnKit">Spawn Kit</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isSpawnPersistent">
-                      <label class="form-check-label" for="isSpawnPersistent">Persistent</label>
+                    <div class="card mb-3">
+                      <div class="card-header">Spawn Properties</div>
+                      <div class="card-body">
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" value="" id="isSpawnSafe">
+                          <label class="form-check-label" for="isSpawnSafe">Safe</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" value="" id="isSpawnSequential">
+                          <label class="form-check-label" for="isSpawnSequential">Sequential</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" value="" id="isSpawnSpread">
+                          <label class="form-check-label" for="isSpawnSpread">Spread</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" value="" id="isSpawnExclusive">
+                          <label class="form-check-label" for="isSpawnExclusive">Exclusive</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" value="" id="isSpawnPersistent">
+                          <label class="form-check-label" for="isSpawnPersistent">Persistent</label>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="my-3">
+                    <div class="text-end">
+                      <div class="btn-group btn-group-sm" role="group" aria-label="Spawns control">
+                        <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Spawn</button>
+                        <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Spawn</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="text-end">
-                  <div class="btn-group btn-group-sm" role="group" aria-label="Spawns control">
-                    <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Spawn</button>
-                    <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Spawn</button>
+                
+                <div class="card mb-3">
+                  <div class="card-header">Respawn Module</div>
+                  <div class="card-body">
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="respawnDelay" placeholder=" ">
+                      <label for="respawnDelay">Delay Time</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="respawnFilter" placeholder=" ">
+                      <label for="respawnFilter">Respawn Filter</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="respawnMessage" placeholder=" ">
+                      <label for="respawnMessage">Respawn Message</label>
+                    </div>
+                    <div class="card mb-3">
+                      <div class="card-header">Respawn Attributes</div>
+                      <div class="card-body">
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" value="" id="isRespawnAuto">
+                          <label class="form-check-label" for="isRespawnAuto">Auto</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" value="" id="isRespawnBlackout">
+                          <label class="form-check-label" for="isRespawnBlackout">Blackout</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" value="" id="isRespawnSpectate">
+                          <label class="form-check-label" for="isRespawnSpectate">Spectate</label>
+                        </div>
+                        <!-- <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" value="" id="isRespawnInBed">
+                          <label class="form-check-label" for="isRespawnInBed">Beds</label>
+                        </div> -->
+                      </div>
+                    </div>
+                    <hr class="my-3">
+                    <div class="text-end">
+                      <div class="btn-group btn-group-sm" role="group" aria-label="Respawns control">
+                        <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Respawn</button>
+                        <button type="button" class="btn btn-danger"><i class="bi bi-dash-lg"></i> Delete Respawn</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Input Control -->
+            <!-- Output Control -->
             <hr class="my-3">
             <button type="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> Add to Output</button>
             <button type="button" class="btn btn-secondary">/></button>
