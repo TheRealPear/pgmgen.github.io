@@ -14,7 +14,7 @@ PGM XML Generator is still in its infancy. As such, new features are actively be
 * TBD
 
 ## Usage
-To start using PGM XML Generator, you simply just need a modern web browser (with JavaScript enabled) and [click here](https://pgmgen.github.io). No download is necessary!
+To start using PGM XML Generator, you simply just need a modern web browser (with JavaScript enabled) and [click here](https://pgmgen.pearo.icu). No download is necessary!
 
 ## Contributing & Licensing
 All contribution are welcomed. This project is available under the [MIT license](https://github.com/TheRealPear/pgmgen.github.io/blob/main/LICENSE).
