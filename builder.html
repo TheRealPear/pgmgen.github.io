@@ -14,25 +14,50 @@
     <meta name="twitter:title" content="XML - PGMGen" />
     <meta name="twitter:description" content="A simple website to assist in formatting XML files for PvP Game Manager (PGM) maps." />
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" rel="stylesheet" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" integrity="sha384-Ay26V7L8bsJTsX9Sxclnvsn+hkdiwRnrjZJXqKmkIDobPgIIWBOVguEcQQLDuhfN" crossorigin="anonymous">
     <link href="src/css/override.css" rel="stylesheet">
+    <script type="module" src="src/js/color-modes.js"></script>
   </head>
   <body>
     <!-- Navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand"><i class="bi bi-file-code"></i> PGMGen</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <!-- Left side -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href=""><i class="bi bi-house"></i> Home</a>
             </li>
+          </ul>
+          <!-- Right side -->
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link" href="https://github.com/TheRealPear/pgmgen.github.io" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> GitHub</a>
+            </li>
+            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+              <div class="vr d-none d-lg-flex h-100 mx-lg-2"></div>
+              <hr class="d-lg-none my-2">
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-lightbulb"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme" style="--bs-dropdown-min-width: 8rem;">
+                <li>
+                  <button class="dropdown-item active" data-bs-theme-value="auto"><i class="bi bi-circle-half"></i> Auto</button>
+                </li>
+                <li>
+                  <button class="dropdown-item" data-bs-theme-value="light"><i class="bi bi-sun"></i> Light</button>
+                </li>
+                <li>
+                  <button class="dropdown-item" data-bs-theme-value="dark"><i class="bi bi-moon-stars"></i> Dark</button>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -51,7 +76,7 @@
         <div class="col-sm-auto">
           <p class="h5">PGM Modules</p>
           <hr class="my-3">
-          <div class="card bg-light">
+          <div class="card bg-body-tertiary">
               <div class="card-body">
                 The latest map proto is <code>1.4.2</code>.
               </div>
@@ -152,12 +177,16 @@
                 <div class="card-body">
                   <div class="mb-3">
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isAttackDefend" disabled>
+                      <input class="form-check-input" type="checkbox" value="" id="isAttackDefend">
                       <label class="form-check-label" for="isAttackDefend">Attack/Defend</label>
                     </div>
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="checkbox" value="" id="isArcade">
                       <label class="form-check-label" for="isArcade">Arcade</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isBedwars">
+                      <label class="form-check-label" for="isBedwars">Bed Wars</label>
                     </div>
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="checkbox" value="" id="isBlitz">
@@ -168,7 +197,11 @@
                       <label class="form-check-label" for="isBlitzRage">Blitz: Rage</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isCP" disabled>
+                      <input class="form-check-input" type="checkbox" value="" id="isBridge">
+                      <label class="form-check-label" for="isBridge">Bridge</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isCP">
                       <label class="form-check-label" for="isCP">Control the Point (CP)</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -188,11 +221,11 @@
                       <label class="form-check-label" for="isDTM">Destroy the Monument (DTM)</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isFFA" disabled>
+                      <input class="form-check-input" type="checkbox" value="" id="isFFA">
                       <label class="form-check-label" for="isFFA">Free for All (FFA)</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isFFB" disabled>
+                      <input class="form-check-input" type="checkbox" value="" id="isFFB">
                       <label class="form-check-label" for="isFFB">Flag Football (FFB)</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -204,31 +237,35 @@
                       <label class="form-check-label" for="isKOTH">King of the Hill (KoTH)</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isMixed" disabled>
+                      <input class="form-check-input" type="checkbox" value="" id="isMixed">
                       <label class="form-check-label" for="isMixed">Mixed</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isPayload" disabled>
+                      <input class="form-check-input" type="checkbox" value="" id="isPayload">
                       <label class="form-check-label" for="isPayload">Payload</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isRage" disabled>
+                      <input class="form-check-input" type="checkbox" value="" id="isRage">
                       <label class="form-check-label" for="isRage">Rage</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isRFW" disabled>
+                      <input class="form-check-input" type="checkbox" value="" id="isRFW">
                       <label class="form-check-label" for="isRFW">Race for Wool</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isScorebox" disabled>
+                      <input class="form-check-input" type="checkbox" value="" id="isScorebox">
                       <label class="form-check-label" for="isScorebox">Scorebox</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isSkywars" disabled>
+                      <input class="form-check-input" type="checkbox" value="" id="isSkywars">
                       <label class="form-check-label" for="isSkywars">Skywars</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" value="" id="isTDM" disabled>
+                      <input class="form-check-input" type="checkbox" value="" id="isSG">
+                      <label class="form-check-label" for="isSG">Survival Games</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="isTDM">
                       <label class="form-check-label" for="isTDM">Team Deathmatch (TDM)</label>
                     </div>
                   </div>
@@ -804,7 +841,7 @@
         <div class="col-sm-4">
           <p class="h5">XML Output</p>
           <hr class="my-3">
-          <textarea class="form-control font-monospace" id="textAreaExample" rows="8" placeholder="Your XML file will appear here once the required map details are populated." readonly></textarea>
+          <textarea class="form-control font-monospace bg-light-subtle" id="textAreaExample" rows="8" placeholder="Your XML file will appear here once the required map details are populated." readonly></textarea>
           <hr class="my-3">
           <div class="text-center">
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#importXMLModal" disabled aria-disabled="true"><i class="bi bi-upload"></i> Import XML</button>
@@ -877,6 +914,6 @@
         <p class="text-center text-muted">&#169; 2023 PGMGen Contributors — This project is available under <a href="https://github.com/TheRealPear/PGMGen/blob/main/LICENSE">MIT</a>; inspired by works from <a href="https://github.com/Pugzy">Pugzy</a> and others.</p>
       </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   </body>
 </html>
