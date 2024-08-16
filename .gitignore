@@ -1,21 +1,76 @@
 # macOS generated files
 .DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+
 ._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
 
 # Windows generated files
-*.lnk
 Thumbs.db
 Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
+*.stackdump
 [Dd]esktop.ini
 $RECYCLE.BIN/
+*.lnk
 
-# VS Code and Sublime generated files
+# Linux generated files
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Notepad++, VS Code, Sublime, Kate generated files
+*.bak
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+.history/
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
 *.sublime-workspace
+GitHub.sublime-settings
+.*.kate-swp
+.swp.*
+
+# Node, Svelte, etc. generated files
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+node_modules/
+/build
+.npm
+/.svelte-kit
+/package
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Secrets
+.env
+.env.*
+!.env.example
