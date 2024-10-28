@@ -30,7 +30,7 @@
       <hr class="my-3">
       <div class="card bg-body-tertiary">
           <div class="card-body">
-            The latest map proto is <code>1.4.2</code>.
+            The latest map proto is <code>1.5.0</code>.
           </div>
       </div>
       <hr class="my-3">
